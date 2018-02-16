@@ -293,7 +293,7 @@ conAdd.returnBook(h,i,j, function(err, result){ if(!err)console.log(result); });
 function SBk()
 {
 var k=document.getElementById("v11").value;
-conAdd.searchbooks(k, function(err, result){ if(!err)alert(result); });
+conAdd.searchbooks(k, function(err, result){ if(!err)alert("BOOK NAME = " +result[0]+ " AVAILABILITY = " +result[1]); });
 
 
 }
@@ -301,7 +301,7 @@ conAdd.searchbooks(k, function(err, result){ if(!err)alert(result); });
 function SPl()
 {
 var l=document.getElementById("v12").value;
-conAdd.searchPeople(l, function(err, result){ if(!err)alert(result); });
+conAdd.searchPeople(l, function(err, result){ if(!err)alert("USERNAME =  "+result[0] + " NO. OF BOOKS IN HAND= "+result[1]+" FINE AMOUNT = "+result[2]); });
 
 }
 </script>
