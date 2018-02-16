@@ -1,0 +1,309 @@
+
+<html >
+<head> 
+
+<script src="web3.min.js"></script>
+
+<meta charset="utf-8">
+
+<title> LMS </title>
+
+<h1 style="color:red;" > <center> LIBRARY MANAGEMENT SYSTEM </center> </h1>
+</head>
+<body>
+
+<form  style="color:DodgerBlue;">
+<center>
+<table border="2" style="width:35%" >
+
+<tr> <td>
+<center><input type="text" id="v1" placeholder="_isbn no.">
+<input type="text" id="v2" placeholder="_book name">
+<input type="button" onclick="AdBk()" value="ADDBOOKS"></center>
+</td> </tr>
+
+<tr> <td>
+<center><input type="text" id="v3" placeholder="_person id">
+<input type="text" id="v4" placeholder="_person name">
+<input type="text" id="v4A" placeholder="_person age" >
+<input type="button" onclick="AdPl()" value="ADDPEOPLE"></center>
+</td> </tr>
+
+<tr> <td>
+<center><input type="text" id="v5" placeholder="_isbn no.">
+<input type="text" id="v6" placeholder="_person id">
+<input type="text" id="v7" placeholder="_Epoch current time">
+<input type="button" onclick="GetBk()" value="GET BOOKS"></center>
+</td> </tr>
+
+<tr> <td>
+<center><input type="text" id="v8" placeholder="_isbn no.">
+<input type="text" id="v9" placeholder="_person id">
+<input type="text" id="v10" placeholder="_Epoch current time">
+<input type="button" onclick="RtBk()" value="RETURN BOOKS"></center>
+</td> </tr>
+
+<tr> <td>
+<center><input type="text" id="v11" placeholder="_isbn no.">
+<input type="button" onclick="return SBk()" value="SEARCH BOOKS"></center>
+</td> </tr>
+
+
+<tr> <td>
+<center><input type="text" id="v12" placeholder="_person id">
+<input type="button" onclick="return SPl()" value="SEARCH PEOPLE"></center>
+</td> </tr>
+</center>
+</table>
+</form>
+
+  <a href="http://Google.co.in"> EXIT </a> 
+<script type="text/javascript">
+
+//var web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/"));
+web3.eth.defaultAccount="0x8306b5a1D89593EF0a6eCf48887207d77CD972E0";
+var conn=web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_isbn",
+				"type": "uint256"
+			}
+		],
+		"name": "searchbooks",
+		"outputs": [
+			{
+				"name": "NAME_",
+				"type": "string"
+			},
+			{
+				"name": "AVAILABILITY_",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_idno",
+				"type": "uint256"
+			}
+		],
+		"name": "searchPeople",
+		"outputs": [
+			{
+				"name": "NAME_",
+				"type": "string"
+			},
+			{
+				"name": "NOB_",
+				"type": "uint256"
+			},
+			{
+				"name": "FINE_",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_isbn",
+				"type": "uint256"
+			},
+			{
+				"name": "_bname",
+				"type": "string"
+			}
+		],
+		"name": "AddBooks",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_idno",
+				"type": "uint256"
+			},
+			{
+				"name": "_pname",
+				"type": "string"
+			},
+			{
+				"name": "_age",
+				"type": "uint256"
+			}
+		],
+		"name": "AddPeople",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_isbn",
+				"type": "uint256"
+			},
+			{
+				"name": "_idno",
+				"type": "uint256"
+			},
+			{
+				"name": "_time",
+				"type": "uint256"
+			}
+		],
+		"name": "GetBook",
+		"outputs": [
+			{
+				"name": "SUCCESS_",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_isbn",
+				"type": "uint256"
+			},
+			{
+				"name": "_idno",
+				"type": "uint256"
+			},
+			{
+				"name": "_time",
+				"type": "uint256"
+			}
+		],
+		"name": "returnBook",
+		"outputs": [
+			{
+				"name": "FINE_",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	}
+]);
+
+var conAdd=conn.at('0xcc0793e197d727ad858eadeaf6fcb56c0c8df2ed'); 
+
+
+
+if(!web3.isConnected()) {
+  
+        console.log("Ok");
+        
+      } else {
+        console.log("no");
+      }
+      web3.version.getNetwork((err, netId) => {
+            switch (netId) {
+              case "1":
+                console.log('This is mainnet')
+                break
+              case "2":
+                console.log('This is the deprecated Morden test network.')
+                break
+              case "3":
+                console.log('This is the ropsten test network.')
+                break
+              case "4":
+                console.log('This is the Rinkeby test network.')
+                break
+              case "42":
+                console.log('This is the Kovan test network.')
+                break
+              default:
+                console.log('This is an unknown network.')
+            }
+        })
+
+
+
+
+
+
+
+
+function AdBk()
+{
+var a=document.getElementById("v1").value;
+var b=document.getElementById("v2").value;
+conAdd.AddBooks(a,b, function(err, result){ if(!err)console.log(result); });
+
+}
+
+function AdPl()
+{
+var c=document.getElementById("v3").value;
+var d=document.getElementById("v4").value;
+var d1=document.getElementById("v4A").value;
+conAdd.AddPeople(c,d,d1, function(err, result){ if(!err)console.log(result); });
+
+}
+
+function GetBk()
+{
+var e=document.getElementById("v5").value;
+var f=document.getElementById("v6").value;
+var g=document.getElementById("v7").value;
+conAdd.GetBook(e,f,g, function(err, result){ if(!err)alert(result); });
+
+}
+
+function RtBk()
+{
+var h=document.getElementById("v8").value;
+var i=document.getElementById("v9").value;
+var j=document.getElementById("v10").value;
+conAdd.returnBook(h,i,j, function(err, result){ if(!err)console.log(result); });
+
+}
+
+function SBk()
+{
+var k=document.getElementById("v11").value;
+conAdd.searchbooks(k, function(err, result){ if(!err)alert(result); });
+
+
+}
+
+function SPl()
+{
+var l=document.getElementById("v12").value;
+conAdd.searchPeople(l, function(err, result){ if(!err)alert(result); });
+
+}
+</script>
+</body>
+</html>
