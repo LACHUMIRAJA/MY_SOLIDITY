@@ -1,0 +1,136 @@
+
+<html >
+<head> 
+
+<script src="web3.min.js"></script>
+<script src="Inventory.js"></script>
+
+<meta charset="utf-8">
+
+<title> IMS </title>
+
+<h1 style="color:red;" > <center> NANBAN ICECREAMS </center> </h1>
+<center><img src="ice2.jpg" width="30%">
+</head>
+<body>
+
+<p id="date" ></p>
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = "Date: "+ d + ""+  m  +""+ y;
+</script>
+
+<form  style="color:DodgerBlue;">
+<center>
+
+<table border="2" style="width:25%" >
+
+<p> View Total No. Of Products </p>
+
+<tr> <td>
+<center> 
+<input type="button" onclick="Products()" value="TOTAL NUMBER OF PRODUCTS"> 
+
+</center>
+</td> </tr>
+</table>
+
+
+
+
+
+<table border="2" style="width:25%" >
+
+<p> Product List </p>
+
+<tr> <td>
+<center> <input type="button" onclick="Plist()" value="PRODUCTS LIST"> </center>
+</td> </tr>
+
+<tr> <td>
+<center> 
+<textarea id="ps" rows="4" cols="50" maxlength="50"></textarea>
+</center>
+</td> </tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<table border="2" style="width:25%" >
+
+<p> Search The Products </p>
+
+<tr> <td>
+<center> <input type="text" id="v5" placeholder="_productid" >
+<input type="button" onclick="SearchProduct()" value="PRODUCT DETAILS"></center>
+</td> </tr>
+
+</table>
+
+
+<table border="2" style="width:25%">
+
+<p> Buy The Products </p>
+
+<tr> <td>
+<center> <input type="text" id="v6" placeholder="_date" >
+ <input type="text" id="v7" placeholder="_customerid" > </center>
+ <center> <input type="text" id="v8" placeholder="_productid" ></center>
+<center> <input type="button" onclick="B()" value="BUY PRODUCTS"></center>
+</td> </tr>
+
+</table>
+
+
+
+
+<table >
+
+<p> If You Need More Tokes Click Here </p>
+
+<tr> <td>
+
+<center> <a href="BuyToken.html"> BUY TOKENS  </a></center>
+</td> </tr>
+
+</table>
+
+
+
+</form>
+
+
+
+
+<h3 id="pli"> </h3>
+</center>
+<div class="asd">
+<a href="index1.html" class=asd>BACK TO WELCOME PAGE</a> 
+<a href="http://Google.co.in">EXIT</a> 
+ </div>
+<style>
+.asd {
+   
+     padding-right: 100px;
+    padding-left: 30px;
+}
+
+
+</style>
+
+
+</body>
+</html>
