@@ -1,0 +1,205 @@
+
+
+
+<html >
+<head> 
+
+<script src="web3.min.js"></script>
+<script src="Inventory.js"></script>
+
+<meta charset="utf-8">
+
+<title> IMS </title>
+
+<h1 style="color:red;" > <center> NANBAN ICECREAMS </center> </h1>
+<center><img src="ice2.jpg" width="30%">
+</head>
+<body>
+
+<p id="date" ></p>
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = "Date: "+ d + ""+  m  +""+ y;
+</script>
+
+<form  style="color:DodgerBlue;">
+<center>
+
+<table border="2" style="width:25%" >
+
+<p> View Total No. Of Products </p>
+
+<tr> <td>
+<center> 
+<input type="button" onclick="Products()" value="TOTAL NUMBER OF PRODUCTS"> 
+</center>
+</td> </tr>
+</table>
+
+
+
+
+<table border="2" style="width:25%" >
+
+<p> Product List </p>
+
+<tr> <td>
+<center> <input type="button" onclick="Plist()" value="PRODUCTS LIST"> </center>
+</td> </tr>
+
+<tr> <td>
+<center> 
+<textarea id="ps" rows="4" cols="50" maxlength="50"></textarea>
+</center>
+</td> </tr>
+
+
+
+</table>
+
+
+
+
+
+<table border="2" style="width:25%" >
+
+<p> Add The Products </p>
+
+<tr> <td>
+<center> <input type="text" id="v1" placeholder="_productid">
+<input type="text" id="v2" placeholder="_name"> </center>
+</td> </tr>  
+
+<tr> <td>
+<center> <input type="text" id="v3" placeholder="_in gram">
+<input type="text" id="v4" placeholder="_price">  </center> 
+</td> </tr>
+
+<tr> <td>
+<center> <input type="text" id="v4a" placeholder="_count">
+  </center> 
+</td> </tr>
+
+<tr> <td> 
+<center> <input type="button" onclick="AddP()" value="ADD PRODUCTS"> </center>
+</td> </tr>
+</table>
+
+<table border="2" style="width:25%" >
+
+<p> Search The Products </p>
+
+<tr> <td>
+<center> <input type="text" id="v5" placeholder="_productid" >
+<input type="button" onclick="SearchProduct()" value="PRODUCT DETAILS"></center>
+</td> </tr>
+
+</table>
+
+
+
+
+
+
+
+<table border="2" style="width:25%" >
+
+<p> View Total No. Of Bills </p>
+
+<tr> <td>
+<center> <input type="button" onclick="Bills()" value="TOTAL NUMBER OF BILLS"> </center>
+</td> </tr>
+</table>
+
+
+
+
+
+
+<table border="2" style="width:25%" >
+
+<p> Individual Bill Details </p>
+
+<tr> <td>
+<center> <input type="text" id="v9" placeholder="_productid" >
+<input type="button" onclick="Bill()" value="BILL DETAILS"></center>
+</td> </tr>
+
+</table>
+
+
+<table border="2" style="width:25%" >
+
+<p> Total Bills Details </p>
+
+<tr> <td>
+<center> 
+<input type="button" onclick="TotalBills()" value="TOTAL BILL DETAILS">
+</center>
+</td> </tr>
+
+<tr> <td>
+<center> 
+<textarea id="tb" rows="4" cols="50" maxlength="50"></textarea>
+</center>
+</td> </tr>
+
+
+
+
+</table>
+
+
+
+
+<table border="2" style="width:25%" >
+
+<p> Total Bills Details </p>
+
+<tr> <td>
+<center> 
+<input type="button" onclick="Message()" value="ALERT MESSAGES">
+</center>
+</td> </tr>
+
+<tr> <td>
+<center> 
+<textarea id="ams" rows="4" cols="50" maxlength="50"></textarea>
+</center>
+</td> </tr>
+
+
+
+
+</table>
+
+
+
+
+</form>
+
+
+
+<h2 id="ta"></h2>
+
+
+<div class="asd">
+<a href="index1.html" class=asd>BACK TO WELCOME PAGE</a> 
+<a href="http://Google.co.in">EXIT</a> 
+ </div>
+<style>
+.asd {
+   
+     padding-right: 100px;
+    padding-left: 30px;
+}
+
+
+</style>
+
+ 
+</body>
+</html>
