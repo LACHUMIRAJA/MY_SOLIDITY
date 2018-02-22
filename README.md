@@ -1,13 +1,13 @@
 # MY_SOLIDITY
 
-Library Management System :
+#Library Management System 
       - library.sol 
       - library.html
       - web3.min.js
       - Its a Dapp for Library Management System
       
       
-Inventory Management System
+#Inventory Management System
       - Inventory.sol
       - StandardToken.sol
       - Inventory.js
@@ -17,5 +17,5 @@ Inventory Management System
       - BuyToken.html
       - Inventory.html
       - CustomerPage.html
-      - Its a Dapp for Inventory Management System
+   Its a Dapp for Inventory Management System. In this Dapp, All the products can be purchased by only tokens. 
       
