@@ -17,5 +17,5 @@
       - BuyToken.html
       - Inventory.html
       - CustomerPage.html
-   Its a Dapp for Inventory Management System. In this Dapp, All the products can be purchased by only tokens. 
+      - Its a Dapp for Inventory Management System. In this Dapp, All the products can be purchased by only tokens. 
       
